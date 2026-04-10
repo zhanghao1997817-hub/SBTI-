@@ -1,0 +1,168 @@
+/* pages/test/test.wxss */
+.test-page {
+  padding-bottom: 120rpx;
+}
+
+.test-card {
+  padding: 32rpx;
+}
+
+/* 进度条 */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 32rpx;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 20rpx;
+  background: #edf3ee;
+  border-radius: 999rpx;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #97b59c, #5b7a62);
+  border-radius: inherit;
+  transition: width 0.22s ease;
+}
+
+.progress-text {
+  color: var(--muted);
+  font-size: 24rpx;
+  white-space: nowrap;
+}
+
+/* 题目 */
+.question-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28rpx;
+}
+
+.question-item {
+  border: 1rpx solid var(--line);
+  border-radius: 36rpx;
+  padding: 32rpx;
+  background: linear-gradient(180deg, #ffffff, #fbfdfb);
+}
+
+.question-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999rpx;
+  padding: 8rpx 16rpx;
+  background: var(--soft);
+  border: 1rpx solid var(--line);
+  font-size: 22rpx;
+  color: var(--accent-strong);
+}
+
+.dim-label {
+  font-size: 22rpx;
+  color: var(--muted);
+}
+
+.question-text {
+  font-size: 28rpx;
+  line-height: 1.8;
+  display: block;
+  margin-bottom: 20rpx;
+  white-space: pre-wrap;
+}
+
+/* 选项 */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 16rpx;
+  padding: 24rpx;
+  border-radius: 28rpx;
+  border: 1rpx solid var(--line);
+  background: #fff;
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+
+.option-selected {
+  border-color: #bcd0c1;
+  background: #f8fcf9;
+}
+
+.radio-dot {
+  width: 36rpx;
+  height: 36rpx;
+  min-width: 36rpx;
+  border-radius: 50%;
+  border: 2rpx solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rpx;
+}
+
+.radio-active {
+  border-color: var(--accent-strong);
+}
+
+.radio-inner {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: var(--accent-strong);
+}
+
+.option-code {
+  font-weight: 800;
+  color: var(--accent-strong);
+  min-width: 36rpx;
+  font-size: 28rpx;
+}
+
+.option-text {
+  font-size: 26rpx;
+  line-height: 1.7;
+  flex: 1;
+}
+
+/* 底部操作 */
+.actions-bottom {
+  margin-top: 32rpx;
+  padding-top: 16rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 24rpx;
+  line-height: 1.7;
+}
+
+.btn-group {
+  display: flex;
+  gap: 16rpx;
+  flex-wrap: wrap;
+}
+
+.btn-group .btn-primary,
+.btn-group .btn-secondary {
+  flex: 1;
+  min-width: 200rpx;
+}
