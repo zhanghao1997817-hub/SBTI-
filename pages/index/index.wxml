@@ -1,0 +1,14 @@
+<!--pages/index/index.wxml-->
+<view class="index-page">
+  <view class="hero card">
+    <view class="hero-inner">
+      <text class="hero-title">MBTI已经过时，\nSBTI来了。</text>
+      <button class="btn-primary start-btn" bindtap="onStartTest">开始测试</button>
+      <view class="credit">
+        <text class="credit-line">原作者：B站@蛆肉儿串儿</text>
+        <text class="credit-line">部署学习者：天辉</text>
+        <text class="credit-line">微信小程序适配版</text>
+      </view>
+    </view>
+  </view>
+</view>
