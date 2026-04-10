@@ -1,0 +1,49 @@
+<!--pages/test/test.wxml-->
+<view class="test-page container">
+  <view class="test-card card">
+    <!-- 进度条 -->
+    <view class="topbar">
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: {{progress}}%"></view>
+      </view>
+      <text class="progress-text">{{progressText}}</text>
+    </view>
+
+    <!-- 题目列表 -->
+    <view class="question-list">
+      <view class="question-item" wx:for="{{questions}}" wx:key="id" wx:for-index="qIdx">
+        <view class="question-meta">
+          <view class="badge">第 {{qIdx + 1}} 题</view>
+          <text class="dim-label">{{item.special ? '补充题' : '维度已隐藏'}}</text>
+        </view>
+        <text class="question-text">{{item.text}}</text>
+        <view class="options">
+          <label
+            class="option {{answers[item.id] === opt.value ? 'option-selected' : ''}}"
+            wx:for="{{item.codedOptions}}"
+            wx:for-item="opt"
+            wx:key="value"
+            data-question-id="{{item.id}}"
+            data-value="{{opt.value}}"
+            bindtap="onOptionChange"
+          >
+            <view class="radio-dot {{answers[item.id] === opt.value ? 'radio-active' : ''}}">
+              <view class="radio-inner" wx:if="{{answers[item.id] === opt.value}}"></view>
+            </view>
+            <text class="option-code">{{opt.code}}</text>
+            <text class="option-text">{{opt.label}}</text>
+          </label>
+        </view>
+      </view>
+    </view>
+
+    <!-- 底部操作 -->
+    <view class="actions-bottom">
+      <text class="hint">{{hintText}}</text>
+      <view class="btn-group">
+        <button class="btn-secondary" bindtap="onBackIntro">返回首页</button>
+        <button class="btn-primary" disabled="{{!canSubmit}}" bindtap="onSubmit">提交并查看结果</button>
+      </view>
+    </view>
+  </view>
+</view>
