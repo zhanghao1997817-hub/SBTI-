@@ -1,0 +1,64 @@
+<!--pages/result/result.wxml-->
+<view class="result-page container" wx:if="{{result}}">
+  <view class="result-card card">
+    <!-- 顶部：图片 + 人格信息 -->
+    <view class="result-top">
+      <view class="poster-box {{image ? '' : 'no-image'}}">
+        <image
+          wx:if="{{image}}"
+          class="poster-image"
+          src="{{image}}"
+          mode="aspectFit"
+          alt="{{typeCode}}（{{typeCn}}）"
+        ></image>
+        <text class="poster-caption">{{typeIntro}}</text>
+      </view>
+
+      <view class="type-box">
+        <text class="type-kicker">{{modeKicker}}</text>
+        <text class="type-name">{{typeCode}}（{{typeCn}}）</text>
+        <view class="match-badge">
+          <text>{{badge}}</text>
+        </view>
+        <text class="type-sub">{{sub}}</text>
+      </view>
+    </view>
+
+    <!-- 人格解读 -->
+    <view class="analysis-box">
+      <text class="section-title">该人格的简单解读</text>
+      <text class="analysis-text">{{typeDesc}}</text>
+    </view>
+
+    <!-- 十五维度 -->
+    <view class="dim-box">
+      <text class="section-title">十五维度评分</text>
+      <view class="dim-list">
+        <view class="dim-item" wx:for="{{dimList}}" wx:key="key">
+          <view class="dim-item-top">
+            <text class="dim-name">{{item.name}}</text>
+            <text class="dim-score">{{item.level}} / {{item.score}}分</text>
+          </view>
+          <text class="dim-desc">{{item.explanation}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 友情提示 -->
+    <view class="note-box">
+      <text class="section-title">友情提示</text>
+      <text class="note-text">{{funNote}}</text>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="result-actions">
+      <button class="btn-secondary" bindtap="onRestart">重新测试</button>
+      <button class="btn-primary" open-type="share" bindtap="onToHome">回到首页</button>
+    </view>
+
+    <!-- 分享提示 -->
+    <view class="share-hint">
+      <text>点击右上角"···"可分享给好友</text>
+    </view>
+  </view>
+</view>
